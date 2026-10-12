@@ -1,0 +1,27 @@
+digraph AFD {
+  rankdir=LR; bgcolor=white; nodesep=0.45; ranksep=0.7;
+  node [fontname="Helvetica", fontsize=13, shape=circle, style=filled, fillcolor="#F1EFE8", color="#5F5E5A", fixedsize=true, width=0.62];
+  edge [fontname="Helvetica", fontsize=11, color="#444441", arrowsize=0.7];
+  inicio [shape=point, width=0.01, style=invis];
+  inicio -> q0;
+  q0;
+  c1;
+  c2;
+  c3;
+  c4;
+  c5;
+  c6;
+  c7 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_c7 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite CADENA"];
+  c7 -> tok_c7 [style=dashed, color="#0F6E56", arrowhead=none];
+  q0 -> c1 [label=" \" "];
+  c1 -> c1 [label=" normal "];
+  c1 -> c2 [label=" \\ "];
+  c1 -> c7 [label=" \" "];
+  c2 -> c1 [label=" \" \\ / b f n r t "];
+  c2 -> c3 [label=" u "];
+  c3 -> c4 [label=" hex "];
+  c4 -> c5 [label=" hex "];
+  c5 -> c6 [label=" hex "];
+  c6 -> c1 [label=" hex "];
+}

@@ -1,0 +1,37 @@
+digraph AFD {
+  rankdir=LR; bgcolor=white; nodesep=0.45; ranksep=0.7;
+  node [fontname="Helvetica", fontsize=13, shape=circle, style=filled, fillcolor="#F1EFE8", color="#5F5E5A", fixedsize=true, width=0.62];
+  edge [fontname="Helvetica", fontsize=11, color="#444441", arrowsize=0.7];
+  inicio [shape=point, width=0.01, style=invis];
+  inicio -> q0;
+  q0;
+  x1;
+  x2;
+  x3 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_x3 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite ETIQUETA_ABRE"];
+  x3 -> tok_x3 [style=dashed, color="#0F6E56", arrowhead=none];
+  x4;
+  x5 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_x5 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite ETIQUETA_VACIA"];
+  x5 -> tok_x5 [style=dashed, color="#0F6E56", arrowhead=none];
+  x6;
+  x7;
+  x8 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_x8 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite ETIQUETA_CIERRA"];
+  x8 -> tok_x8 [style=dashed, color="#0F6E56", arrowhead=none];
+  xt [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_xt [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite TEXTO"];
+  xt -> tok_xt [style=dashed, color="#0F6E56", arrowhead=none];
+  q0 -> x1 [label=" < "];
+  q0 -> xt [label=" todo menos < y espacio "];
+  x1 -> x2 [label=" letra "];
+  x1 -> x6 [label=" / "];
+  x2 -> x2 [label=" letra, digito, - . "];
+  x2 -> x3 [label=" > "];
+  x2 -> x4 [label=" / "];
+  x4 -> x5 [label=" > "];
+  x6 -> x7 [label=" letra "];
+  x7 -> x7 [label=" letra, digito, - . "];
+  x7 -> x8 [label=" > "];
+  xt -> xt [label=" todo menos < "];
+}

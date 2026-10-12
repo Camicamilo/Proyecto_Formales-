@@ -1,0 +1,15 @@
+digraph AFD {
+  rankdir=LR; bgcolor=white; nodesep=0.45; ranksep=0.7;
+  node [fontname="Helvetica", fontsize=13, shape=circle, style=filled, fillcolor="#F1EFE8", color="#5F5E5A", fixedsize=true, width=0.62];
+  edge [fontname="Helvetica", fontsize=11, color="#444441", arrowsize=0.7];
+  c1;
+  u1;
+  u2;
+  u3;
+  c1 -> u1 [label=" lider2 "];
+  c1 -> u2 [label=" lider3 "];
+  c1 -> u3 [label=" lider4 "];
+  u1 -> c1 [label=" cont "];
+  u2 -> u1 [label=" cont "];
+  u3 -> u2 [label=" cont "];
+}

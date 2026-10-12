@@ -1,0 +1,32 @@
+digraph AFD {
+  rankdir=LR; bgcolor=white; nodesep=0.45; ranksep=0.7;
+  node [fontname="Helvetica", fontsize=13, shape=circle, style=filled, fillcolor="#F1EFE8", color="#5F5E5A", fixedsize=true, width=0.62];
+  edge [fontname="Helvetica", fontsize=11, color="#444441", arrowsize=0.7];
+  inicio [shape=point, width=0.01, style=invis];
+  inicio -> q0;
+  q0;
+  s1 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s1 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite LLAVE_ABRE"];
+  s1 -> tok_s1 [style=dashed, color="#0F6E56", arrowhead=none];
+  s2 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s2 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite LLAVE_CIERRA"];
+  s2 -> tok_s2 [style=dashed, color="#0F6E56", arrowhead=none];
+  s3 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s3 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite CORCHETE_ABRE"];
+  s3 -> tok_s3 [style=dashed, color="#0F6E56", arrowhead=none];
+  s4 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s4 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite CORCHETE_CIERRA"];
+  s4 -> tok_s4 [style=dashed, color="#0F6E56", arrowhead=none];
+  s5 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s5 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite DOS_PUNTOS"];
+  s5 -> tok_s5 [style=dashed, color="#0F6E56", arrowhead=none];
+  s6 [shape=doublecircle, fillcolor="#E1F5EE", color="#0F6E56"];
+  tok_s6 [shape=plaintext, style="", fixedsize=false, fontsize=10, fontcolor="#0F6E56", label="emite COMA"];
+  s6 -> tok_s6 [style=dashed, color="#0F6E56", arrowhead=none];
+  q0 -> s1 [label=" { "];
+  q0 -> s2 [label=" } "];
+  q0 -> s3 [label=" [ "];
+  q0 -> s4 [label=" ] "];
+  q0 -> s5 [label=" : "];
+  q0 -> s6 [label=" , "];
+}
